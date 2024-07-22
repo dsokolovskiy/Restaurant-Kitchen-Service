@@ -5,7 +5,8 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
 )
-from .models import Dish, Cook
+from .models import Dish, DishType, Cook
+from .forms import DishForm, DishTypeForm, CookForm
 
 
 class DishListView(ListView):
