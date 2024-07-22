@@ -1,4 +1,4 @@
-echo "# Restaurant-Kitchen-Service" >> README.md"""
+"""
 URL configuration for RestaurantKitchenService project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
