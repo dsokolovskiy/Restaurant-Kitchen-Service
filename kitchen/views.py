@@ -12,27 +12,23 @@ from .forms import DishForm, DishTypeForm, CookForm
 class DishListView(ListView):
     model = Dish
     template_name = "kitchen/dish_list.html"
-    context_object_name = "dishes"
 
 
 class DishDetailView(DetailView):
     model = Dish
     template_name = "kitchen/dish_detail.html"
-    context_object_name = "dish"
 
 
 class DishCreateView(CreateView):
     model = Dish
+    form_class = DishForm
     template_name = "kitchen/dish_form.html"
-    fields = ["name", "description", "price", "dish_type", "cooks"]
-    title = "Create Dish"
 
 
 class DishUpdateView(UpdateView):
     model = Dish
+    form_class = DishForm
     template_name = "kitchen/dish_form.html"
-    fields = ["name", "description", "price", "dish_type", "cooks"]
-    title = "Update Dish"
 
 
 class DishDeleteView(DeleteView):
@@ -41,30 +37,54 @@ class DishDeleteView(DeleteView):
     success_url = "/kitchen/dishes/"
 
 
+class DishTypeListView(ListView):
+    model = DishType
+    template_name = "kitchen/dishtype_list.html"
+
+
+class DishTypeDetailView(DetailView):
+    model = DishType
+    template_name = "kitchen/dishtype_detail.html"
+
+
+class DishTypeCreateView(CreateView):
+    model = DishType
+    form_class = DishTypeForm
+    template_name = "kitchen/dishtype_form.html"
+
+
+class DishTypeUpdateView(UpdateView):
+    model = DishType
+    form_class = DishTypeForm
+    template_name = "kitchen/dishtype_form.html"
+
+
+class DishTypeDeleteView(DeleteView):
+    model = DishType
+    template_name = "kitchen/dishtype_confirm_delete.html"
+    success_url = "/kitchen/dishtypes/"
+
+
 class CookListView(ListView):
     model = Cook
     template_name = "kitchen/cook_list.html"
-    context_object_name = "cooks"
 
 
 class CookDetailView(DetailView):
     model = Cook
     template_name = "kitchen/cook_detail.html"
-    context_object_name = "cook"
 
 
 class CookCreateView(CreateView):
     model = Cook
+    form_class = CookForm
     template_name = "kitchen/cook_form.html"
-    fields = ["username", "email", "password", "first_name", "last_name", "years_of_experience"]
-    title = "Create Cook"
 
 
 class CookUpdateView(UpdateView):
     model = Cook
+    form_class = CookForm
     template_name = "kitchen/cook_form.html"
-    fields = ["username", "email", "password", "first_name", "last_name", "years_of_experience"]
-    title = "Update Cook"
 
 
 class CookDeleteView(DeleteView):
