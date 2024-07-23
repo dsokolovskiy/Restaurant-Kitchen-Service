@@ -18,4 +18,10 @@ class DishTypeForm(forms.ModelForm):
 class CookForm(forms.ModelForm):
     class Meta:
         model = Cook
-        fields = ["username", "email", "password1", "password2", "first_name", "last_name", "years_of_experience"]
+        fields = ["first_name", "last_name", "username", "email", "years_of_experience"]
+
+
+class CookCreationForm(UserCreationForm):
+    class Meta:
+        model = Cook
+        fields = ["username", "email", "first_name", "last_name", "years_of_experience"]
