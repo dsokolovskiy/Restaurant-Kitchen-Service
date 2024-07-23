@@ -1,11 +1,16 @@
 {% extends "base.html" %}
 
+{% block title %}DishType List{% endblock %}
+
 {% block content %}
-<h1>Types of Dishes</h1>
+<h2>DishType List</h2>
+<a href="{% url 'kitchen:dishtype_create' %}">Create a new dishtype</a>
 <ul>
-    {% for dishtype in object_list %}
-        <li><a href="{% url 'dishtype_detail' dishtype.pk %}">{{ dishtype.name }}</a> </li>
+    {% for dishtype in dishtype_list %}
+        <li>
+            <a href="{% url 'kitchen:dishtype_detail' dishtype.pk %}">{{ dishtype.name }}</a>
+        </li>
     {% endfor %}
 </ul>
-<a href="{% url 'dishtype_create' %}">Create new dish</a>
 {% endblock %}
+  
