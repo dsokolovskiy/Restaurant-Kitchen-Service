@@ -3,7 +3,7 @@ from django.views.generic import (
     DetailView,
     CreateView,
     UpdateView,
-    DeleteView,
+    DeleteView, TemplateView,
 )
 from django.urls import reverse_lazy
 from .models import Dish, DishType, Cook
@@ -94,3 +94,7 @@ class CookDeleteView(DeleteView):
     model = Cook
     template_name = "kitchen/cook_confirm_delete.html"
     success_url = reverse_lazy("kitchen:cook_list")
+
+
+class HomePageView(TemplateView):
+    template_name = 'kitchen/home.html'
