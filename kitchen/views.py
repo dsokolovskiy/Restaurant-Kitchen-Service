@@ -97,4 +97,4 @@ class CookDeleteView(DeleteView):
 
 
 class HomePageView(TemplateView):
-    template_name = 'kitchen/home.html'
+    template_name = "kitchen/home.html"
