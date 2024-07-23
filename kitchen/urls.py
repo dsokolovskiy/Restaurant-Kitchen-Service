@@ -14,9 +14,10 @@ from .views import (
     CookDetailView,
     CookCreateView,
     CookUpdateView,
-    CookDeleteView
+    CookDeleteView,
 )
 
+app_name = 'kitchen'
 
 urlpatterns = [
     path('dishes/', DishListView.as_view(), name='dish_list'),
