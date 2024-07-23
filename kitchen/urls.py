@@ -15,11 +15,13 @@ from .views import (
     CookCreateView,
     CookUpdateView,
     CookDeleteView,
+    HomePageView,
 )
 
 app_name = 'kitchen'
 
 urlpatterns = [
+    path('', HomePageView.as_view(), name='home'),
     path('dishes/', DishListView.as_view(), name='dish_list'),
     path('dishes/<int:pk>/', DishDetailView.as_view(), name='dish_detail'),
     path('dishes/create/', DishCreateView.as_view(), name='dish_create'),
