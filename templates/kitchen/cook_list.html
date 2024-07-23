@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 
+{% block title %}Cook List{% endblock %}
+
 {% block content %}
-<h1>Cooks</h1>
+<h2>Cook List</h2>
+<a href="{% url 'kitchen:cook_create' %}">Create a new cook</a>
 <ul>
-    {% for cook in object_list %}
-        <li><a href="{% url 'cook_detail' cook.pk %}">{{ cook.first_name }} {{ cook.last_name }}</a></li>
+    {% for cook in cook_list %}
+        <li>
+            <a href="{% url 'kitchen:cook_detail' cook.pk %}">{{ cook.name }}</a>
+        </li>
     {% endfor %}
 </ul>
-<a href="{% url 'cook_create' %}">Create a new cook</a>
 {% endblock %}
