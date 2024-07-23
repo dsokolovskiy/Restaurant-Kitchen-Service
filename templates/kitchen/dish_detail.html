@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Dish Detail{% endblock %}
+
+{% block content %}
+<h2>{{ dish.name }}</h2>
+<p>{{ dish.description }}</p>
+<p>Type: {{ dish.dish_type.name }}</p>
+<p>Cooks responsible:</p>
+<ul>
+    {% for cook in dish.cooks.all %}
+        <li>{{ cook.name }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'kitchen:dish_update' dish.pk %}">Update Dish</a>
+<a href="{% url 'kitchen:dish_delete' dish.pk %}">Delete Dish</a>
+<a href="{% url 'kitchen:dish_list' %}">Back to Dish List</a>
+{% endblock %}
