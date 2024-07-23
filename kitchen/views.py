@@ -70,7 +70,7 @@ class DishTypeUpdateView(UpdateView):
 
 class DishTypeDeleteView(DeleteView):
     model = DishType
-    template_name = 'kitchen/dishtype_confirm_delete.html'
+    template_name = 'kitchen/dishtype_delete.html'
     success_url = reverse_lazy('kitchen:dishtype_list')
 
 
@@ -102,5 +102,5 @@ class CookUpdateView(UpdateView):
 
 class CookDeleteView(DeleteView):
     model = Cook
-    template_name = 'kitchen/cook_confirm_delete.html'
+    template_name = 'kitchen/cook_delete.html'
     success_url = reverse_lazy('kitchen:cook_list')
