@@ -18,8 +18,11 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import RedirectView
 
+from kitchen.views import HomePageView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('kitchen/', include('kitchen.urls')),
     path('', RedirectView.as_view(url='kitchen/', permanent=True)),
+    path('', HomePageView.as_view(), name='home'),
 ]
