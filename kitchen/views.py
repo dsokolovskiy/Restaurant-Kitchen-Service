@@ -5,8 +5,9 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
 )
+from django.urls import reverse_lazy
 from .models import Dish, DishType, Cook
-from .forms import DishForm, DishTypeForm, CookForm
+from .forms import DishForm, DishTypeForm, CookForm, CookCreationForm
 
 
 class DishListView(ListView):
@@ -34,7 +35,7 @@ class DishUpdateView(UpdateView):
 class DishDeleteView(DeleteView):
     model = Dish
     template_name = "kitchen/dish_confirm_delete.html"
-    success_url = "/kitchen/dishes/"
+    success_url = reverse_lazy("kitchen:dish_list")
 
 
 class DishTypeListView(ListView):
@@ -62,7 +63,7 @@ class DishTypeUpdateView(UpdateView):
 class DishTypeDeleteView(DeleteView):
     model = DishType
     template_name = "kitchen/dishtype_confirm_delete.html"
-    success_url = "/kitchen/dishtypes/"
+    success_url = reverse_lazy("kitchen:dishtype_list")
 
 
 class CookListView(ListView):
@@ -77,17 +78,19 @@ class CookDetailView(DetailView):
 
 class CookCreateView(CreateView):
     model = Cook
-    form_class = CookForm
+    form_class = CookCreationForm
     template_name = "kitchen/cook_form.html"
+    success_url = reverse_lazy("kitchen:cook_list")
 
 
 class CookUpdateView(UpdateView):
     model = Cook
     form_class = CookForm
     template_name = "kitchen/cook_form.html"
+    success_url = reverse_lazy("kitchen:cook_list")
 
 
 class CookDeleteView(DeleteView):
     model = Cook
     template_name = "kitchen/cook_confirm_delete.html"
-    success_url = "/kitchen/cooks/"
+    success_url = reverse_lazy("kitchen:cook_list")
