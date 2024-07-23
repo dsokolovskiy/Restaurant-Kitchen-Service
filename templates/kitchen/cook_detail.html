@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ object.first_name }} {{ object.last_name }}</h1>
+<p>Username: {{ object.username }}</p>
+<p>Email: {{ object.email }}</p>
+<p>Years of Experience: {{ object.years_of_experience }}</p>
+<a href="{% url 'cook_update' object.pk %}">Edit</a>
+<a href="{% url 'cook_delete' object.pk %}">Delete</a>
+<a href="{% url 'cook_list' %}">Back to list</a>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ object.name }}</h1>
+<a href="{% url 'dishtype_update' object.pk %}">Edit</a>
+<a href="{% url 'dishtype_delete' object.pk %}">Delete</a>
+<a href="{% url 'dishtype_list' %}">Back to list</a>
+{% endblock %}

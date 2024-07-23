@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ object.name }}</h1>
+<p>{{ object.description }}</p>
+<p>Price: ${{ object.price }}</p>
+<p>Dish Type: {{ object.dish_type.name }}</p>
+<p>Cooks:</p>
+<ul>
+    {% for cook in object.cooks.all %}
+        <li>{{ cook.first_name }} {{ cook.last_name }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'dish_update' object.pk %}">Edit</a>
+<a href="{% url 'dish_delete' object.pk %}">Delete</a>
+<a href="{% url 'dish_list' %}">Back to list</a>
+{% endblock %}
