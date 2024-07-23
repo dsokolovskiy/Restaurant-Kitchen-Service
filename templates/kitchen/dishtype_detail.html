@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 
+{% block title %}DishType Detail{% endblock %}
+
 {% block content %}
-<h1>{{ object.name }}</h1>
-<a href="{% url 'dishtype_update' object.pk %}">Edit</a>
-<a href="{% url 'dishtype_delete' object.pk %}">Delete</a>
-<a href="{% url 'dishtype_list' %}">Back to list</a>
+<h2>{{ dishtype.name }}</h2>
+<p>{{ dishtype.description }}</p>
+<a href="{% url 'kitchen:dishtype_update' dishtype.pk %}">Update DishType</a>
+<a href="{% url 'kitchen:dishtype_delete' dishtype.pk %}">Delete DishType</a>
+<a href="{% url 'kitchen:dishtype_list' %}">Back to DishType List</a>
 {% endblock %}
