@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Restaurant Kitchen Service{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Restaurant Kitchen Service</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'dish_list' %}">Dishes</a></li>
+                <li><a href="{% url 'dishtype_list' %}">Dish Types</a></li>
+                <li><a href="{% url 'cook_list' %}">Cooks</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Restaurant Kitchen Service</p>
+    </footer>
+</body>
+</html>
