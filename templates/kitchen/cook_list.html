@@ -4,7 +4,7 @@
 
 {% block content %}
 <h2>Cook List</h2>
-<a href="{% url 'kitchen:cook_create' %}">Create a new cook</a>
+<a href="{% url 'kitchen:cook_create' %}">Create New Cooks</a>
 <ul>
     {% for cook in cook_list %}
         <li>
