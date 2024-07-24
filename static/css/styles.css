@@ -6,7 +6,7 @@ body {
     color: #333;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Забезпечує, щоб футер завжди був внизу */
+    min-height: 100vh; /* Висота мінімум на 100% від видимого простору */
 }
 
 /* Стилі для шапки (header) */
@@ -14,7 +14,8 @@ header {
     background-color: #343a40;
     padding: 1rem;
     color: #fff;
-    text-align: center; /* Центрування тексту */
+    text-align: center;
+    position: relative;
 }
 
 header h1 {
@@ -22,10 +23,24 @@ header h1 {
     font-size: 2rem;
 }
 
+/* Стилі для навігаційних іконок */
+.nav-icons {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-icons a img {
+    width: 24px; /* Розмір іконок */
+    height: 24px;
+    margin-right: 0.5rem;
+}
+
 /* Основний контент */
 main {
-    flex: 1; /* Дозволяє основному контенту розширюватися, заповнюючи доступний простір */
     padding: 1rem;
+    flex: 1; /* Займає залишок простору */
 }
 
 /* Стилі для футера (footer) */
@@ -34,13 +49,13 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem;
-    width: 100%;
+    position: relative; /* Прибираємо абсолютне позиціонування */
 }
 
 /* Стилі для головної сторінки */
 .home-header {
     background: url('/static/img/pexels-yente-van-eynde-1263034-2403392.jpg') no-repeat center center/cover;
-    height: 100vh; /* Висота в 100% від видимого простору */
+    height: calc(100vh - 3rem); /* Висота в 100% від видимого простору, враховуючи висоту хедера та футера */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,15 +63,6 @@ footer {
     color: #fff;
     text-align: center;
     padding: 0 20px;
-    box-sizing: border-box; /* Щоб padding і border враховувалися у загальних розмірах */
-}
-
-.home-title {
-    background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий фон для тексту */
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 90%; /* Обмеження ширини */
-    box-sizing: border-box; /* Щоб padding враховувався у ширині */
 }
 
 .home-title h1 {

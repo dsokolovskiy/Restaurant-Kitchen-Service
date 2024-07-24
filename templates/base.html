@@ -10,6 +10,14 @@
 </head>
 <body>
     <header>
+        <div class="nav-icons">
+            <a href="javascript:history.back()">
+                <img src="{% static 'img/arrow-circle-left.png' %}" alt="Back">
+            </a>
+            <a href="javascript:history.forward()">
+                <img src="{% static 'img/arrow-circle-right.png' %}" alt="Forward">
+            </a>
+        </div>
         <h1>Restaurant Kitchen Service</h1>
     </header>
     <main>
@@ -19,14 +27,5 @@
     <footer>
         <p>&copy; 2024 Restaurant Kitchen Service</p>
     </footer>
-    <!-- Navigation buttons -->
-    <div class="nav-buttons">
-        <button onclick="history.back()" class="nav-button">
-            <img src="{% static 'img/left-arrow-in-circular-button-black-symbol.png' %}" alt="Back">
-        </button>
-        <button onclick="history.forward()" class="nav-button">
-            <img src="{% static 'img/send.png' %}" alt="Forward">
-        </button>
-    </div>
 </body>
 </html>
