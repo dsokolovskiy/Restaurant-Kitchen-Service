@@ -5,26 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Restaurant Kitchen Service{% endblock %}</title>
-    <link rel="stylesheet" href="{% static  %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <header>
-        <h1>Restaurant Kitchen Service</h1>
-        <nav>
-            <ul>
-                <li><a href="{% url 'kitchen:dish_list' %}">Dishes</a></li>
-                <li><a href="{% url 'kitchen:dishtype_list' %}">Dish Types</a></li>
-                <li><a href="{% url 'kitchen:cook_list' %}">Cooks</a></li>
-            </ul>
-        </nav>
+    <header class="bg-light py-3">
+        <div class="container">
+            <h1 class="text-center">Restaurant Kitchen Service</h1>
+            <nav>
+                <ul class="nav justify-content-center">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'kitchen:dish_list' %}">Dishes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'kitchen:dishtype_list' %}">Dish Types</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'kitchen:cook_list' %}">Cooks</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main>
+    <main class="container my-4">
         {% block content %}
         {% endblock %}
     </main>
-    <footer>
-        <p>&copy; 2024 Restaurant Kitchen Service</p>
+    <footer class="bg-light py-3">
+        <div class="container">
+            <p class="text-center mb-0">&copy; 2024 Restaurant Kitchen Service</p>
+        </div>
     </footer>
 </body>
 </html>
