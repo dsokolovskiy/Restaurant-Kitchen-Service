@@ -4,12 +4,15 @@
 
 {% block content %}
 <h2>Cook List</h2>
-<a href="{% url 'kitchen:cook_create' %}">Create New Cooks</a>
+<a href="{% url 'kitchen:cook_create' %}">Create New Cook</a>
 <ul>
     {% for cook in cook_list %}
         <li>
-            <a href="{% url 'kitchen:cook_detail' cook.pk %}">{{ cook.name }}</a>
+            <a href="{% url 'kitchen:cook_detail' cook.pk %}">{{ cook.username }}</a> <!-- використовуйте username, якщо це є полем -->
         </li>
+    {% empty %}
+        <li>No cooks available.</li>
     {% endfor %}
 </ul>
 {% endblock %}
+
