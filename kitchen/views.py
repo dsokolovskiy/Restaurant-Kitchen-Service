@@ -1,7 +1,7 @@
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Dish, DishType, Cook
-from .forms import DishForm, DishTypeForm, CookForm
+from .forms import DishForm, DishTypeForm, CookForm, RegisterForm
 
 
 class HomePageView(ListView):
@@ -104,3 +104,10 @@ class CookDeleteView(DeleteView):
     model = Cook
     template_name = 'kitchen/cook_delete.html'
     success_url = reverse_lazy('kitchen:cook_list')
+
+
+class RegisterView(CreateView):
+    model = Cook
+    form_class = RegisterForm
+    template_name = 'registration/register.html'
+    success_url = reverse_lazy('login')

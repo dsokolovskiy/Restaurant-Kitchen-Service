@@ -16,6 +16,7 @@ from .views import (
     CookCreateView,
     CookUpdateView,
     CookDeleteView,
+    RegisterView,
 )
 
 app_name = 'kitchen'
@@ -37,4 +38,7 @@ urlpatterns = [
     path('cooks/create/', CookCreateView.as_view(), name='cook_create'),
     path('cooks/<int:pk>/update/', CookUpdateView.as_view(), name='cook_update'),
     path('cooks/<int:pk>/delete/', CookDeleteView.as_view(), name='cook_delete'),
+    path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('register/', RegisterView.as_view(), name='register'),
 ]
