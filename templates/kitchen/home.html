@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device=width, initial-scale=1.0">
-    <title>Kitchen Home Page</title>
-</head>
-<body>
-    <h1>Welcome to the Kitchen Service!</h1>
-    <a href="{% url 'kitchen:dish_list' %}">View Dishes</a>
-    <a href="{% url 'kitchen:cook_list' %}">View Cooks</a>
-    <a href="{% url 'kitchen:dishtype_list' %}">View Dish Types</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <header class="home-header">
+            <h1>Welcome to Restaurant Kitchen Service</h1>
+            <p>Your go-to platform for managing kitchen operations.</p>
+            <a href="{% url 'kitchen:dish_list' %}" class="btn btn-primary">View Dishes</a>
+            <a href="{% url 'kitchen:dishtype_list' %}" class="btn btn-secondary">View Dish Types</a>
+            <a href="{% url 'kitchen:cook_list' %}" class="btn btn-success">View Cooks</a>
+        </header>
+    </div>
+{% endblock %}
