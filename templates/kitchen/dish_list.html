@@ -1,23 +1,27 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
 
 {% block title %}Dish List{% endblock %}
 
 {% block content %}
-    <h2>Dish List</h2>
-    <a href="{% url 'kitchen:dish_create' %}" class="btn btn-primary">Create New Dish</a>
-    <div class="dish-list">
-        {% for dish in dish_list %}
-            <div class="dish-item">
-                <img src="{% static 'img/Borsch.jpg' %}" alt="{{ dish.name }}" class="dish-image">
-                <div class="dish-info">
-                    <h3><a href="{% url 'kitchen:dish_detail' dish.pk %}">{{ dish.name }}</a></h3>
-                    <p>{{ dish.description }}</p>
-                    <p><strong>Price:</strong> ${{ dish.price }}</p>
+    <div class="dish-list-container">
+        <div class="dish-list-header">
+            <h2>Dish List</h2>
+            <a href="{% url 'kitchen:dish_create' %}" class="btn btn-primary">Create New Dish</a>
+        </div>
+        <div class="dish-list">
+            {% for dish in dish_list %}
+                <div class="dish-item">
+                    <img src="{% static 'img/Borsch.jpg' %}" alt="{{ dish.name }}" class="dish-image">
+                    <div class="dish-info">
+                        <h3><a href="{% url 'kitchen:dish_detail' dish.pk %}">{{ dish.name }}</a></h3>
+                        <p>{{ dish.description }}</p>
+                        <p class="price">${{ dish.price }}</p>
+                    </div>
                 </div>
-            </div>
-        {% empty %}
-            <p>No dishes available.</p>
-        {% endfor %}
+            {% empty %}
+                <p>No dishes available.</p>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
