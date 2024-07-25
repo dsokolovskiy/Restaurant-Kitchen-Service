@@ -13,13 +13,22 @@
         <div class="nav-icons">
             <a href="javascript:history.back()">
                 <img src="{% static 'img/arrow-circle-left.png' %}" alt="Back">
-              
             </a>
             <a href="javascript:history.forward()">
                 <img src="{% static 'img/arrow-circle-right.png' %}" alt="Forward">
             </a>
         </div>
         <h1>Restaurant Kitchen Service</h1>
+        <nav>
+            <ul>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'kitchen:logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'kitchen:login' %}">Login</a></li>
+                    <li><a href="{% url 'kitchen:register' %}">Register</a></li>
+                {% endif %}
+            </ul>
+        </nav>
     </header>
     <main>
         {% block content %}
