@@ -3,8 +3,11 @@
 {% block title %}Cook Detail{% endblock %}
 
 {% block content %}
-<h2>{{ cook.name }}</h2>
-<p>{{ cook.bio }}</p>
+<h2>{{ cook.username }}</h2>
+<p>First Name: {{ cook.first_name }}</p>
+<p>Last Name: {{ cook.last_name }}</p>
+<p>Email: {{ cook.email }}</p>
+<p>Years of Experience: {{ cook.years_of_experience }}</p>
 <a href="{% url 'kitchen:cook_update' cook.pk %}">Update Cook</a>
 <a href="{% url 'kitchen:cook_delete' cook.pk %}">Delete Cook</a>
 <a href="{% url 'kitchen:cook_list' %}">Back to Cook List</a>
