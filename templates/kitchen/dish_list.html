@@ -13,6 +13,7 @@
                 <div class="dish-info">
                     <h3><a href="{% url 'kitchen:dish_detail' dish.pk %}">{{ dish.name }}</a></h3>
                     <p>{{ dish.description }}</p>
+                    <p><strong>Price:</strong> ${{ dish.price }}</p>
                 </div>
             </div>
         {% empty %}
