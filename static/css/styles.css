@@ -1,15 +1,12 @@
-/* Загальні стилі для сторінки */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
     color: #333;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Висота мінімум на 100% від видимого простору */
+    min-height: 100vh;
+    padding: 0 0 3rem;
 }
-
-/* Стилі для шапки (header) */
 header {
     background-color: #343a40;
     padding: 1rem;
@@ -23,39 +20,62 @@ header h1 {
     font-size: 2rem;
 }
 
-/* Стилі для навігаційних іконок */
-.nav-icons {
+.nav-arrows {
     position: absolute;
     left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 1rem;
 }
 
-.nav-icons a img {
-    width: 24px; /* Розмір іконок */
+.nav-arrows a {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.nav-arrow img {
+    width: 24px;
     height: 24px;
-    margin-right: 0.5rem;
 }
 
-/* Основний контент */
+.auth-links {
+    position: absolute;
+    right: 1rem;
+    top: 0.020rem;
+    text-align: right;
+}
+
+.auth-links a,
+.auth-links button {
+    color: #fff;
+    text-decoration: none;
+    background: none;
+    border: none;
+    margin-left: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.auth-links a:hover,
+.auth-links button:hover {
+    text-decoration: underline;
+}
+
 main {
     padding: 1rem;
-    flex: 1; /* Займає залишок простору */
 }
 
-/* Стилі для футера (footer) */
 footer {
     background-color: #343a40;
     color: #fff;
     text-align: center;
     padding: 1rem;
-    position: relative; /* Прибираємо абсолютне позиціонування */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
-/* Стилі для головної сторінки */
 .home-header {
     background: url('/static/img/pexels-yente-van-eynde-1263034-2403392.jpg') no-repeat center center/cover;
-    height: calc(100vh - 3rem); /* Висота в 100% від видимого простору, враховуючи висоту хедера та футера */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -100,7 +120,6 @@ footer {
     background-color: #28a745;
 }
 
-/* Стилі для форм */
 form {
     margin-top: 1rem;
 }

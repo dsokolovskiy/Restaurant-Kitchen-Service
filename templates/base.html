@@ -6,36 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Restaurant Kitchen Service{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
     <header>
-        <div class="nav-icons">
-            <a href="javascript:history.back()">
+        <div class="nav-arrows">
+            <a href="{% url 'kitchen:home' %}" class="nav-arrow">
                 <img src="{% static 'img/arrow-circle-left.png' %}" alt="Back">
             </a>
-            <a href="javascript:history.forward()">
+            <a href="{% url 'kitchen:home' %}" class="nav-arrow">
                 <img src="{% static 'img/arrow-circle-right.png' %}" alt="Forward">
             </a>
         </div>
         <h1>Restaurant Kitchen Service</h1>
-        <nav>
-            <ul>
-                {% if user.is_authenticated %}
-                    <li><a href="{% url 'kitchen:logout' %}">Logout</a></li>
-                {% else %}
-                    <li><a href="{% url 'kitchen:login' %}">Login</a></li>
-                    <li><a href="{% url 'kitchen:register' %}">Register</a></li>
-                {% endif %}
-            </ul>
-        </nav>
+        <div class="auth-links">
+            {% if user.is_authenticated %}
+                <form method="post" action="{% url 'kitchen:logout' %}">
+                    {% csrf_token %}
+                    <button type="submit">Log out</button>
+                </form>
+            {% else %}
+                <a href="{% url 'kitchen:login' %}">Log in</a> | 
+                <a href="{% url 'kitchen:register' %}">Register</a>
+            {% endif %}
+        </div>
     </header>
     <main>
         {% block content %}
         {% endblock %}
     </main>
     <footer>
-        <p>&copy; 2024 Restaurant Kitchen Service</p>
+        © 2024 Restaurant Kitchen Service
     </footer>
 </body>
 </html>
