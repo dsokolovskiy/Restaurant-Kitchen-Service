@@ -1,12 +1,12 @@
+/* Загальні стилі для сторінки */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
+    padding: 0;
     color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    padding: 0 0 3rem;
 }
+
+/* Стилі для шапки (header) */
 header {
     background-color: #343a40;
     padding: 1rem;
@@ -20,43 +20,21 @@ header h1 {
     font-size: 2rem;
 }
 
-.nav-arrows {
-    position: absolute;
-    left: 1rem;
-    top: 1rem;
-}
-
-.nav-arrows a {
-    display: inline-block;
-    margin-right: 1rem;
-}
-
-.nav-arrow img {
-    width: 24px;
-    height: 24px;
-}
-
-.auth-links {
-    position: absolute;
-    right: 1rem;
-    top: 0.020rem;
-    text-align: right;
-}
-
-.auth-links a,
-.auth-links button {
-    color: #fff;
-    text-decoration: none;
-    background: none;
-    border: none;
-    margin-left: 1rem;
-    cursor: pointer;
+header .btn {
+    padding: 0.75rem 1.5rem;
     font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
 }
 
-.auth-links a:hover,
-.auth-links button:hover {
-    text-decoration: underline;
+header .btn:hover {
+    background-color: #0056b3;
 }
 
 main {
@@ -68,11 +46,12 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
 
+/* Стилі для головної сторінки */
 .home-header {
     background: url('/static/img/pexels-yente-van-eynde-1263034-2403392.jpg') no-repeat center center/cover;
     height: 100vh;
@@ -83,6 +62,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 0 20px;
+    position: relative; /* Додаємо relative для позиціонування елементів всередині */
 }
 
 .home-title h1 {
@@ -141,4 +121,107 @@ form a {
     margin-left: 1rem;
     color: #007bff;
     text-decoration: none;
+}
+
+/* Стилі для списку страв */
+.dish-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.dish-list-header h2 {
+    margin: 0;
+}
+
+.dish-list-header .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dish-list-header .btn:hover {
+    background-color: #0056b3;
+}
+
+.dish-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.dish-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    max-width: 300px;
+}
+
+.dish-item img {
+    width: 100%;
+    height: auto;
+}
+
+.dish-info {
+    padding: 1rem;
+}
+
+.dish-info h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.dish-info p {
+    margin: 0.5rem 0;
+}
+
+/* Стилі для стрілочок на головній сторінці */
+.navigation-icons {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+/* Стилі для кнопки Log Out на головній сторінці */
+.header .log-out-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.header .log-out-btn:hover {
+    background-color: #c82333;
+}
+
+.nav-arrows {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-arrows .nav-arrow img {
+    width: 30px;
+    height: 30px;
 }
