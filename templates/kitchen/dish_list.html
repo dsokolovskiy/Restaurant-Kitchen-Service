@@ -9,7 +9,7 @@
     <div class="dish-list">
         {% for dish in dish_list %}
             <div class="dish-item">
-                <img src="{% static 'img/dish-placeholder.png' %}" alt="{{ dish.name }}" class="dish-image">
+                <img src="{% static 'img/pexels-nadin-sh-78971847-18955541.jpg' %}" alt="{{ dish.name }}" class="dish-image">
                 <div class="dish-info">
                     <h3><a href="{% url 'kitchen:dish_detail' dish.pk %}">{{ dish.name }}</a></h3>
                     <p>{{ dish.description }}</p>
