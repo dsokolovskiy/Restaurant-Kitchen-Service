@@ -3,6 +3,7 @@ from kitchen.models import DishType, Cook, Dish
 from django.contrib.auth import get_user_model
 
 
+
 class DishTypeModelTest(TestCase):
     def setUp(self):
         self.dish_type = DishType.objects.create(name="Appetizer")
