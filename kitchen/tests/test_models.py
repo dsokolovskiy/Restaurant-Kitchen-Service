@@ -1,7 +1,5 @@
 from django.test import TestCase
-from kitchen.models import DishType, Dish, Cook
-
-
+from kitchen.models import DishType, Dish
 from django.contrib.auth import get_user_model
 
 
