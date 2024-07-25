@@ -38,6 +38,7 @@ class Dish(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     dish_type = models.ForeignKey(DishType, on_delete=models.CASCADE, related_name="dishes")
     cooks = models.ManyToManyField(Cook, related_name="dishes")
+    image = models.ImageField(upload_to="images/", blank=True, null=True)
 
     def __str__(self):
         return self.name

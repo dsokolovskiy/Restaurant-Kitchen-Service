@@ -1,15 +1,22 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Dish List{% endblock %}
 
 {% block content %}
-<h2>Dish List</h2>
-<a href="{% url 'kitchen:dish_create' %}">Create a new dish</a>
-<ul>
-    {% for dish in dish_list %}
-        <li>
-            <a href="{% url 'kitchen:dish_detail' dish.pk %}">{{ dish.name }}</a>
-        </li>
-    {% endfor %}
-</ul>
+    <h2>Dish List</h2>
+    <a href="{% url 'kitchen:dish_create' %}" class="btn btn-primary">Create New Dish</a>
+    <div class="dish-list">
+        {% for dish in dish_list %}
+            <div class="dish-item">
+                <img src="{% static 'img/dish-placeholder.png' %}" alt="{{ dish.name }}" class="dish-image">
+                <div class="dish-info">
+                    <h3><a href="{% url 'kitchen:dish_detail' dish.pk %}">{{ dish.name }}</a></h3>
+                    <p>{{ dish.description }}</p>
+                </div>
+            </div>
+        {% empty %}
+            <p>No dishes available.</p>
+        {% endfor %}
+    </div>
 {% endblock %}
