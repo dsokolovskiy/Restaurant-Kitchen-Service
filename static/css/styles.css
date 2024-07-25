@@ -1,4 +1,3 @@
-/* Загальні стилі для сторінки */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,7 +5,7 @@ body {
     color: #333;
 }
 
-/* Стилі для шапки (header) */
+
 header {
     background-color: #343a40;
     padding: 1rem;
@@ -51,7 +50,7 @@ footer {
     width: 100%;
 }
 
-/* Стилі для головної сторінки */
+
 .home-header {
     background: url('/static/img/pexels-yente-van-eynde-1263034-2403392.jpg') no-repeat center center/cover;
     height: 100vh;
@@ -62,7 +61,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 0 20px;
-    position: relative; /* Додаємо relative для позиціонування елементів всередині */
+    position: relative;
 }
 
 .home-title h1 {
@@ -123,7 +122,7 @@ form a {
     text-decoration: none;
 }
 
-/* Стилі для списку страв */
+
 .dish-list-header {
     display: flex;
     justify-content: space-between;
@@ -183,7 +182,7 @@ form a {
     margin: 0.5rem 0;
 }
 
-/* Стилі для стрілочок на головній сторінці */
+
 .navigation-icons {
     position: absolute;
     top: 1rem;
@@ -192,7 +191,7 @@ form a {
     gap: 1rem;
 }
 
-/* Стилі для кнопки Log Out на головній сторінці */
+
 .header .log-out-btn {
     position: absolute;
     top: 1rem;
@@ -224,4 +223,30 @@ form a {
 .nav-arrows .nav-arrow img {
     width: 30px;
     height: 30px;
+}
+
+.auth-links {
+    position: absolute;
+    top: 0.020rem;
+    right: 1rem;
+}
+
+.auth-links form button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.auth-links form button:hover {
+    background-color: #0056b3;
+}
+
+.auth-links a {
+    margin-left: 1rem;
+    color: #007bff;
+    text-decoration: none;
 }
