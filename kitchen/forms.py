@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 
-from .models import Dish, DishType, Cook
+from kitchen.models import Dish, DishType, Cook
 
 
 class DishForm(forms.ModelForm):
