@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Dish List{% endblock %}
+
+{% block content %}
+    <div class="dish-list-header">
+        <h2>Dish List</h2>
+        <a href="{% url 'kitchen:dish_create' %}" class="btn btn-primary">Create New Dish</a>
+    </div>
+    <div class="dish-list">
+        {% for dish in dish_list %}
+            <div class="dish-item">
+                <img src="{% static 'img/Borsch.jpg' %}" alt="{{ dish.name }}" class="dish-image">
+                <div class="dish-info">
+                    <h3><a href="{% url 'kitchen:dish_detail' dish.pk %}">{{ dish.name }}</a></h3>
+                    <p>{{ dish.description }}</p>
+                    <p>Price: ${{ dish.price }}</p>
+                    <p>Type: {{ dish.dish_type.name }}</p>
+                    <h4>Cooks responsible:</h4>
+                    <ul>
+                        {% for cook in dish.cooks.all %}
+                            <li>{{ cook.username }}</li>
+                        {% empty %}
+                            <li>No cooks assigned.</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% empty %}
+            <p>No dishes available.</p>
+        {% endfor %}
+    </div>
+{% endblock %}

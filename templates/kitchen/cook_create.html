@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Create Cook{% endblock %}
+
+{% block content %}
+<h2>Create a new Cook</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'kitchen:cook_list' %}">Back to Cook List</a>
+{% endblock %}
