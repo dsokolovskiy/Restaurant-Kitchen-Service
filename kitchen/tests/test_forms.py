@@ -2,7 +2,6 @@ from django.test import TestCase
 from django.contrib.auth import get_user_model
 from kitchen.forms import CookForm, RegisterForm, DishForm, DishTypeForm
 
-
 from kitchen.models import Dish, DishType, Cook
 
 User = get_user_model()
