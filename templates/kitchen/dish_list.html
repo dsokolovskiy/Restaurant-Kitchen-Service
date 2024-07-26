@@ -16,6 +16,15 @@
                     <h3><a href="{% url 'kitchen:dish_detail' dish.pk %}">{{ dish.name }}</a></h3>
                     <p>{{ dish.description }}</p>
                     <p>Price: ${{ dish.price }}</p>
+                    <p>Type: {{ dish.dish_type.name }}</p>
+                    <h4>Cooks responsible:</h4>
+                    <ul>
+                        {% for cook in dish.cooks.all %}
+                            <li>{{ cook.username }}</li>
+                        {% empty %}
+                            <li>No cooks assigned.</li>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
         {% empty %}
