@@ -1,5 +1,6 @@
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+
 from .models import Dish, DishType, Cook
 from .forms import DishForm, DishTypeForm, CookForm, RegisterForm
 
