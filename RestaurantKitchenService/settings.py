@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "django-insecure--pbdn4a)v9-$-ple^%*6d2vcqj@4=$p(+pfa*ozl1!pax*e$j5")
+SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DJANGO_DEBUG", "") != "False"
@@ -88,9 +88,8 @@ DATABASES = {
 }
 
 db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES["default"].update(db_from_env)
+DATABASES['default'].update(db_from_env)
 
-DATABASE_URL = "postgresql://neondb_owner:URksr3W9oaZD@ep-rapid-pond-a2xtaj7h.eu-central-1.aws.neon.tech/neondb?sslmode=require"
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
