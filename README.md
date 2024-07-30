@@ -15,6 +15,7 @@
 10. Important Note
 11. Testing the Application
 12. Conclusion
+13. Deploy
 
 ## Project Overview
 The Restaurant Kitchen Service is a Django web application designed to manage a restaurant's kitchen operations. It allows cooks to create new dishes and dish types and to assign responsibilities for each dish. The application features a user-friendly interface for managing dishes, cooks, and dish types.
@@ -95,3 +96,6 @@ python manage.py test kitchen.tests
 
 ## Conclusion
 You are now ready to use the Restaurant Kitchen Service application.
+
+## Deploy
+[Restaurant Kitchen Service project deployed to Render] (https://restaurant-kitchen-service-2.onrender.com/)
