@@ -1,10 +1,10 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
 }
-
 
 header {
     background-color: #343a40;
@@ -19,11 +19,11 @@ header h1 {
     font-size: 2rem;
 }
 
-header .btn {
+.header .btn,
+.header .log-out-btn {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
     color: #fff;
-    background-color: #007bff;
     border: none;
     border-radius: 5px;
     text-decoration: none;
@@ -32,8 +32,23 @@ header .btn {
     cursor: pointer;
 }
 
-header .btn:hover {
+.header .btn {
+    background-color: #007bff;
+}
+
+.header .btn:hover {
     background-color: #0056b3;
+}
+
+.header .log-out-btn {
+    background-color: #dc3545;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.header .log-out-btn:hover {
+    background-color: #c82333;
 }
 
 main {
@@ -49,7 +64,6 @@ footer {
     bottom: 0;
     width: 100%;
 }
-
 
 .home-header {
     background: url('/static/img/pexels-yente-van-eynde-1263034-2403392.jpg') no-repeat center center/cover;
@@ -101,27 +115,78 @@ footer {
 
 form {
     margin-top: 1rem;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-form button {
+form .form-group {
+    margin-bottom: 1rem;
+}
+
+form .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+form .form-group input,
+form .form-group textarea,
+form .form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form .form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+form button[type="submit"],
+form button[type="reset"] {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 1rem;
 }
 
 form button[type="submit"] {
     background-color: #007bff;
 }
 
+form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+form button[type="reset"] {
+    background-color: #6c757d;
+}
+
+form button[type="reset"]:hover {
+    background-color: #5a6268;
+}
+
 form a {
-    margin-left: 1rem;
+    display: inline-block;
+    margin-top: 1rem;
     color: #007bff;
     text-decoration: none;
 }
 
+form a:hover {
+    text-decoration: underline;
+}
 
 .dish-list-header {
     display: flex;
@@ -182,36 +247,7 @@ form a {
     margin: 0.5rem 0;
 }
 
-
-.navigation-icons {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    display: flex;
-    gap: 1rem;
-}
-
-
-.header .log-out-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #dc3545;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    text-align: center;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.header .log-out-btn:hover {
-    background-color: #c82333;
-}
-
+.navigation-icons,
 .nav-arrows {
     position: absolute;
     top: 1rem;
@@ -249,4 +285,23 @@ form a {
     margin-left: 1rem;
     color: #007bff;
     text-decoration: none;
+}
+
+.create-dish-container {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.create-dish-container {
+    background: url('/static/img/pexels-yente-van-eynde-1263034-2403392.jpg') no-repeat center center/cover;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    color: #fff; /* White text color for better contrast */
 }
